@@ -1,0 +1,57 @@
+一:与前端交互进行接口:URL
+	Usser
+		username GET ?username=username boolean
+		email GET ?email=email boolean
+		
+		//注册 
+		login POST username=username&email=email&password=password 
+		
+		//登录
+		regist POST username=username&password=password
+		 
+	PrimaryCategory资源.
+		primaryCagetorys  GET 注:包括所有的SecondCategorys
+		
+		primaryCategorys POST pName = name
+		
+		primaryCategorys/{pId} DELETE
+		
+	SecondCategory 
+		secondCategorys POST sName=name&pId=pId
+		secondCategorys/{sId} DELETE
+		
+	Tasks
+		tasks POST sId=sId&taskName=taskName&createTime=createTime
+		tasks/{taskId} DELETE
+		tasks/{taskId} PUT isComplation=false
+		tasks/{taskId} PUT isComplation=true
+		tasks GET sId=sId
+		
+		tasks/{createTime} POST sId=sId&taskName=taskName
+		tasks/{createTime} DELETE
+		
+		tasks/{taskId}/{taskName} PUT taskText=taskText
+		tasks/{taskId}/{taskName} GET 
+			
+
+DAO Interface.
+	PrimaryCategory
+		List<PrimaryCategory> getPrimaryCategoryByUser(String userId);
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+测试数据:
+	Primary_category:
+	

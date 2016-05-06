@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<title>baidu-test</title>
+		<meta charset="utf-8">	
+		<link rel="stylesheet" href="public/stylesheets/mystyle.css">
+	</head>
+	<body onload="init()">
+		<div id="container">
+			<div class="myself-prompt">
+				<span class="myself-url">localhost:3000</span>上的网页显示
+				<div class="input-display get-prompt-date">
+					<span class="get-year input-date">2016</span> -
+					<input type="number" class="get-month input-date" value="01" max="12" min="01"> -
+					<input type="number" class="get-day input-date" value="01" max="31" min="01">
+				</div>
+				<div class="input-display get-prompt-name">
+					<input class="prompt-input" maxlength="10" type="text" placeholder="请添加初始项目名">
+				</div>
+				<button class="prompt-button" data-submit="false">取消</button>
+				<button class="prompt-button" data-submit="true">确定</button>
+			</div>
+			<div id="nav-wrap" class="clear-select">
+				<div class="logo">Owen 's Tools</div>
+				<div class="top-nav-profile">
+					<a href="#">
+						<span></span>
+					</a>
+					<div class="top-nav-dropdown">
+						<a href="logout">退出</a>
+					</div>
+				</div>
+			</div>
+			<div class="content-wrap">
+				<div class="all-task-list clear-select">
+					<ul class="list-wrap">
+						<li class="v-li">所有任务 (<span class="all-num">0</span>)</li>
+						<li class="v-li">任务分类</li>
+						<li class="m-li">
+							
+							<div class="m-list-wrap">
+								<ul class="m-list"></ul>
+							</div>
+						</li> 
+					</ul>
+					<div class="add-classify">
+						<a href="#">
+							<img src="public/img/add.png" alt="add">
+							新增分类	
+						</a>
+					</div>
+				</div>
+				<div class="task-process clear-select">
+					<div class="task-process-title clearfix">
+						<a href="#" class="choose-list all-list task-process-active">所有</a>
+						<a href="#" class="choose-list unfinish-list">未完成</a>
+						<a href="#" class="choose-list finish-list">已完成</a>
+					</div>
+					
+					<div class="task-process-con">
+						<div class="con-mask">
+							<h1>暂时还未选定任何任务哦</h1>
+						</div>
+					</div>
+
+					<div class="add-classify">
+						<a href="#">
+							<img src="public/img/add.png" alt="add">
+							添加任务	
+						</a>
+					</div>
+				</div>
+				<div class="content">
+					<div class="content-title">
+						<h1></h1>
+					</div>
+					<div class="content-deadline">
+						<h1>
+							任务日期：<span class="con-d"></span>
+							<a href="#">
+								<img class="finish-edit" src="public/img/choose.png" alt="choose">
+							</a>
+							<a href="#">
+								<img class="edit" src="public/img/edit.png" alt="choose">	
+							</a>
+						</h1>
+					</div>
+					<div class="content-describe clear-select" contenteditable="false">
+						<div class="edit-content"></div>
+						<div class="content-mask">
+							<h1 class="content-mask-con">请选中日程任务进行编辑</h1>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<script src="public/javascripts/util.js"></script>
+		<script src="public/javascripts/myscript.js"></script>
+	</body>
+</html> 						
+<!-- <span class="type-cursor">|</span> -->
