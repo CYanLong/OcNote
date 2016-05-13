@@ -1,0 +1,542 @@
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	font-size: 100%;
+}
+body { 
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: "Consolas","微软雅黑"; 
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+
+/** Consolas **/
+@font-face{
+	font-family:'Consolas';
+	src:url('../font/Consolas.eot');
+	src:url('../font/Consolas.eot') format('embedded-opentype'),
+	url('../font/Consolas.woff') format('woff'),
+	url('../font/Consolas.ttf') format('truetype'),
+	url('../font/Consolas.svg') format('svg');font-weight:normal;font-style:normal
+}
+
+
+/** clearfix **/
+.clearfix {
+	zoom: 1;
+}
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+
+	width: 0;
+	height: 0;
+}	
+
+/** forbidden select **/
+.clear-select {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.myself-prompt {
+	position: absolute;
+	width: 362px;
+	height: 210px;
+	
+	margin-left: -181px;
+	margin-top: -105px;
+
+	z-index: 999;
+	padding: 17px 22px;
+	background: #FBFBFB;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,0.2);
+	transition: 1s;
+	display: none;
+}
+
+.show-myself-prompt {
+	animation: 0.1s showPrompt ease;
+	display: block;
+}
+
+@keyframes showPrompt {
+	0% {
+		transform: scale(0.4);
+	}
+	50% {
+		transform: scale(0.6);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+.input-date {
+	display: inline-block;
+	width: 40px;
+	height: 23px;
+	font-size: 14px;
+	text-indent: 3px;
+	overflow: hidden;
+	padding: 3px 0;
+	border: 1px solid #3E7EF8;
+	border-radius: 3px;
+
+	vertical-align: top;
+}
+
+.input-display {
+	margin: 20px 0 0 15px;
+}
+
+.prompt-input {
+	width: 250px;
+	height: 25px;
+	border: none;
+	box-shadow: 0px 0px 1px 1px #4D90FE;
+	text-indent: 3px;
+}
+
+.prompt-button {
+	float: right;
+	width: 70px;
+	height: 30px;
+
+	border: none;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 10px;
+	
+	cursor: pointer;
+	-webkit-appearance: none;
+	background: #F9F9F9;
+	border: 1px solid #BABABA;
+	font-family: "Consolas","微软雅黑"; 
+}
+
+.prompt-button:hover {
+	border: 1px solid #AE81BC;
+}
+.prompt-button:focus {
+	border: 1px solid #4D90FE;
+}
+
+.sign-button {
+	float: right;
+	margin: ;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+#container {
+	width: 100%;
+	
+}
+
+#nav-wrap {
+	width: 100%;
+		
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	background: #dddddd;
+}
+
+.logo {
+	height: 100%;
+	float: left;
+	
+	margin-left: 20px;
+	text-align: center;
+	font: 600 25px/55px "Consolas";
+
+	color: #999;
+}
+
+.content-wrap {
+	position: relative;
+	width: 100%;
+	height: 92%;
+	overflow: hidden;
+}
+
+.all-task-list {
+	position: relative;
+	float: left;
+	width: 20%;
+	height: 100%;
+	overflow: hidden;
+	padding: 20px 0px 0;
+	background: #F2F2F2;
+	border-right: 1px solid #ccc;
+}
+
+
+.list-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.v-li {
+	width: 100%;
+	height: 35px;
+	
+	text-indent: 10px;
+	
+	margin: 3px 0 0;
+	line-height: 35px;
+}
+
+.m-li {
+	width: 100%;
+	height: auto;
+}
+
+.m-li-title:hover {
+	background: #ccc;
+}
+.m-li-title {
+	width: 100%;
+	height: 35px;
+	font: 200 16px/35px "Consolas","微软雅黑";
+}
+
+.m-li-title img {
+	float: left;
+	margin: 10px 5px 0 10px;
+}
+
+.m-li-title-opt {
+	display: none;
+}
+
+.m-li-title-opt img{
+	float: right;
+	margin: 8px 10px 0 5px;
+}
+
+.m-li-title:hover .m-li-title-opt {
+	display: inline;
+}
+
+.m-list-wrap {
+	width: 100%;
+	height: 0px;
+	
+	overflow: hidden;
+	transition: 0.5s cubic-bezier(0.285, 1.65, 0.745, 1.65);
+}
+.m-list {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.m-list-li {
+	width: 100%;
+	height: 30px;
+	padding: 5px 0px 0 10px;
+	overflow: hidden;
+	font: 200 14px/22px "Consolas","微软雅黑";
+}
+
+.m-list-li img {
+	float: left;
+	margin: 0 5px;
+}
+
+.m-list-li-active {
+	background: #fff;
+}
+
+.m-list-li .m-list-li-close-task {
+	float: right;
+	margin: 3px 10px 0 0;
+	display: none;
+}
+
+.m-list-li:hover .m-list-li-close-task {
+	display: block;
+}
+
+.m-list-li:hover {
+	background: #fff;
+}
+.add-classify {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	width: 100%;
+	height: 45px;
+
+	background: #eee;
+	border-top: 1px solid #D0D0D0;
+	font: 200 16px/40px "微软雅黑";
+	padding: 0 10% 0;
+}
+
+.add-classify img {
+	float: left;
+	margin: 3% 12px 0 0;
+}
+
+
+.task-process {
+	position: relative;
+	float: left;
+	width: 18%;
+	height: 100%;
+	background: #fff;
+	overflow: hidden;
+	border-right: 1px solid #ccc;
+}
+
+.task-process-title {
+	width: 100%;
+	height: auto;
+
+	padding: 3px 10px 3px;
+	background: #eee;
+	text-align: center;
+}
+
+.task-process-title a {
+	float: left;
+	display: block;
+	width: 82px;
+	height: 30px;
+	margin: 0 3px;
+	font: 200 14px/30px "微软雅黑";	
+}
+
+.task-process-title a:hover {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+.task-process-active {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+.task-process-con {
+	width: 100%;
+	height: 100%;
+}
+
+.con-mask {
+	width: 100%;
+	height: 100%;
+	
+	overflow: hidden;
+	text-align: center;
+}
+
+.con-mask h1 {
+	opacity: 0.6;
+	font: 100 18px/20px "微软雅黑";
+	margin: 70% 0 0;
+}
+
+.task-block {
+	width: 100%;
+	height: auto;
+}
+
+.tasks-data {
+	width: 100%;
+	height: 35px;
+	padding: 8px 0px 0 12px; 
+	font: bold 16px/20px "Consolas";
+	background: #FAFAEE;
+}
+
+.tasks-data img {
+	float: right;
+	margin: 3px 10px 0 0;
+}
+
+.task-block-list {
+	width: 100%;
+	height: auto;
+	font: 500 14px/30px "Consolas";
+}
+
+.task-block-list li {
+	width: 100%;
+	height: 30px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.task-block-list li img {
+	float: right;
+	margin: 8px 10px 0 0;
+}
+
+.task-unfinish {
+	color: red;
+}
+
+.task-finish {
+	color: green;
+}
+
+.task-block-list li:hover {
+	background: #F2F2F2;
+}
+
+.choose-finish {
+	display: none;
+}
+
+.choose-unfinish {
+	display: none;
+}
+
+.task-close {
+	margin: 6px 10px 0 0 !important;
+	display: none;
+}
+
+.task-block-list li:hover img {
+	display: block;
+}
+
+.task-li-active {
+	background: #f2f2f2;
+}
+.content {
+	width: 62%;
+	height: 100%;
+	
+	overflow: hidden;
+}
+
+.content-title {
+	width: 100%;
+	height: 50px;
+	background: #F2F2F2;
+	padding: 10px 0 0 10px;
+	font: 300 25px/30px "Consolas","微软雅黑";
+}
+
+.content-deadline {
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 15px 5px 0 15px;
+	background: #FAFAEE;
+	color: #FFC0CB;
+	font: 300 22px/30px "Consolas","微软雅黑";
+}
+
+.content-deadline img {
+	float: right;
+	margin: 5px;
+}
+
+.content-describe {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	color: #000;
+	background: #f5f5f5;
+	overflow-y: auto;
+	max-height: 750px; 
+}
+
+.edit-content {
+	width: 100%;
+	height: 100%;
+	padding: 20px 10px 0 10px;
+	font: 100 16px/20px "Consolas";
+}
+
+.content-mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.content-mask-con {
+	display: block;
+	width: 300px;
+	height: auto;
+	margin: 20% 35% 0;
+	
+
+	color: #ccc;
+	font: 100 25px/30px "微软雅黑";
+}
+
+.edit {
+	display: block;
+}
+
+.finish-edit {
+	display: none;
+}
+
+.type-cursor {
+	font-size: 25px;
+	font-weight: bold;
+	color: #C0C0C0;
+	animation: 1s bink ease infinite;
+}
+
+@keyframes bink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.top-nav-profile{
+	float:right;
+	margin-right:120px;
+	width:200px;
+	height:57px;
+	line-height:57px;
+}
+
+.top-nav-dropdown{
+	color:red;
+	float:right;
+	width:65px;
+}
+

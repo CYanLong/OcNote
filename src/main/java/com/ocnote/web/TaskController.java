@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -106,10 +107,11 @@ public class TaskController {
 	
 
 //	------------------面向单个task的text资源的操作.------------------------------------------
-	@RequestMapping(value="{createTime}/{taskId}/{taskName}", method=RequestMethod.POST)
+	@RequestMapping(value="{createTime}/{taskId}", method=RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void updateTaskText(@PathVariable(value="taskId") String taskId, 
-			String taskText){
+			@RequestBody String taskText){
+		taskText = taskText.split("=")[1];
 		taskService.updateTask(taskId, taskText);
 	}
 	
@@ -117,7 +119,7 @@ public class TaskController {
 			produces="text/plain;charset=utf-8")
 	@ResponseBody
 	public String getTaskText(HttpServletResponse response ,@PathVariable String taskId){
-		
+		System.out.println("invoke TaskText");
 		return taskService.getTaskText(taskId);
 		
 	}
